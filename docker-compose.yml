@@ -1,0 +1,38 @@
+version: '3'
+services:
+    neovim:
+        build:
+            context: ./neovim
+            args:
+                UID: $UID
+                USER: $USER
+                GID: $GID
+                GROUP: $GROUP
+        volumes:
+            - ./optirenta:/optirenta
+            - ./fichiers:/fichiers
+            - ./php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
+            - ./ssmtp.conf:/etc/ssmtp/ssmtp.conf
+    #web:
+    #    build:
+    #        context: ./php_7
+    #        args:
+    #            MGO_USER: $USER
+    #            MGO_GROUP: $USER
+    #    mem_limit: 2G
+    #    networks:
+    #        - selenium-web-network
+    #        - web-network
+    #    ports:
+    #        - "80:80"
+    #    volumes:
+    #        - ./optirenta:/optirenta
+    #        - ./fichiers:/fichiers
+    #        - ./php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
+    #        - ./ssmtp.conf:/etc/ssmtp/ssmtp.conf
+#networks:
+#    selenium-web-network:
+#        driver: bridge
+#    web-network:
+#        driver: bridge
+

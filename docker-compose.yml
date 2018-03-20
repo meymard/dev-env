@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 services:
     neovim:
         build:
@@ -8,11 +8,10 @@ services:
                 USER: $USER
                 GID: $GID
                 GROUP: $GROUP
+        configs:
+            - neovim
         volumes:
-            - ./optirenta:/optirenta
-            - ./fichiers:/fichiers
-            - ./php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
-            - ./ssmtp.conf:/etc/ssmtp/ssmtp.conf
+            - ./workspace:/workspace
     #web:
     #    build:
     #        context: ./php_7
@@ -30,6 +29,10 @@ services:
     #        - ./fichiers:/fichiers
     #        - ./php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
     #        - ./ssmtp.conf:/etc/ssmtp/ssmtp.conf
+configs:
+    neovim:
+        file: ./neovim_conf.txt
+
 #networks:
 #    selenium-web-network:
 #        driver: bridge

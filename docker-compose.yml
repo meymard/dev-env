@@ -4,10 +4,9 @@ services:
         build:
             context: ./neovim
             args:
-                UID: $UID
-                USER: $USER
-                GID: $GID
-                GROUP: $GROUP
+                INFO_UID: 1000
+                INFO_USER: $USER
+                INFO_GID: 1000
         configs:
             - neovim
         volumes:

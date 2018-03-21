@@ -1,0 +1,12 @@
+configs:
+  neovim:
+    file: /home/meymard/docker/environment/neovim_conf.txt
+services:
+  neovim:
+    image: environment_neovim
+    configs:
+    - source: neovim
+    volumes:
+    - /home/meymard/docker/environment/workspace:/workspace:rw
+version: '3.4'
+

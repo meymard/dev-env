@@ -1,11 +1,11 @@
-configs:
-  neovim:
-    file: /home/meymard/docker/environment/neovim_conf.txt
 services:
   neovim:
-    image: environment_neovim
-    configs:
-    - source: neovim
+    build:
+      args:
+        INFO_GID: '1000'
+        INFO_UID: '1000'
+        INFO_USER: meymard
+      context: /home/meymard/docker/environment/neovim
     volumes:
     - /home/meymard/docker/environment/workspace:/workspace:rw
 version: '3.4'

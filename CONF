@@ -1,0 +1,6 @@
+docker swarm init --advertise-addr=127.0.0.1
+docker stack deploy --composer-file=./test.yml env
+docker service create nevironment_neovim
+
+
+

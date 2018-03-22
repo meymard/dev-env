@@ -7,8 +7,8 @@ services:
                 INFO_UID: 1000
                 INFO_USER: $USER
                 INFO_GID: 1000
-        configs:
-            - neovim
+                #configs:
+                #- neovim
         volumes:
             - ./workspace:/workspace
     #web:
@@ -28,9 +28,9 @@ services:
     #        - ./fichiers:/fichiers
     #        - ./php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini
     #        - ./ssmtp.conf:/etc/ssmtp/ssmtp.conf
-configs:
-    neovim:
-        file: ./neovim_conf.txt
+#configs:
+#    neovim:
+#        file: ./neovim_conf.txt
 
 #networks:
 #    selenium-web-network:
